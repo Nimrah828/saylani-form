@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Enrollment-Saylani Mass IT Traing Form</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <!-- New Logo -->
+        <a href="#" class="logo">
+            <img src="./unnamed - Copy.jpg" class="logo-img" alt="EduNova Logo">
+        </a>
+
+
+        <!-- Desktop / Mobile Navigation -->
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Courses</a>
+            <a href="#">Campuses</a>
+            <a href="#">Check Result</a>
+
+            <a href="#registration" class="enroll-btn">
+                Enroll Now
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+
+        </nav>
+
+
+        <!-- Mobile Menu -->
+        <button class="menu-btn" id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================
+         SECTION 2 : HERO + REGISTRATION
+    ====================================== -->
+
+    <section class="hero" id="registration">
+
+        <div class="breadcrumb">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span class="arrow">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+
+            <span>Enroll Now</span>
+
+        </div>
+
+
+        <h1>Registration Form</h1>
+
+        <p>
+            Start your journey towards excellence.
+            Fill out the form to apply for our courses.
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================
+         REGISTRATION TABS
+    ====================================== -->
+
+    <section class="tabs-wrapper">
+
+        <div class="tabs">
+
+            <button
+                class="tab active"
+                data-target="registrationForm"
+            >
+                <i class="fa-regular fa-clipboard"></i>
+                Registration Form
+            </button>
+
+
+            <button
+                class="tab"
+                data-target="idCard"
+            >
+                <i class="fa-regular fa-id-card"></i>
+                Download ID Card
+            </button>
+
+
+            <button
+                class="tab"
+                data-target="entryTest"
+            >
+                <i class="fa-regular fa-square-check"></i>
+                Entry Test Status
+            </button>
+
+
+            <button
+                class="tab"
+                data-target="result"
+            >
+                <i class="fa-regular fa-file-lines"></i>
+                Result
+            </button>
+
+        </div>
+
+
+
+        <!-- Registration Form Content -->
+
+        <div
+            class="content active"
+            id="registrationForm"
+        >
+
+            <h2>Apply for Admission</h2>
+
+            <p>
+                Please enter your information below to complete
+                your registration.
+            </p>
+
+
+            <form id="registrationFormSubmit">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+
+                        <input
+                            type="tel"
+                            placeholder="Enter your phone number"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Select Course</label>
+
+                        <select required>
+
+                            <option value="">
+                                Choose a course
+                            </option>
+
+                            <option>
+                                Web Development
+                            </option>
+
+                            <option>
+                                Graphic Design
+                            </option>
+
+                            <option>
+                                Digital Marketing
+                            </option>
+
+                            <option>
+                                Artificial Intelligence
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+                        <label>CNIC / ID Number</label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your ID number"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Submit Registration
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- ID Card Content -->
+
+        <div
+            class="content"
+            id="idCard"
+        >
+
+            <h2>Download ID Card</h2>
+
+            <p>
+                Enter your registration information to download
+                your student ID card.
+            </p>
+
+            <button class="submit-btn" id="downloadBtn">
+                <i class="fa-solid fa-download"></i>
+                Download ID Card
+            </button>
+
+        </div>
+
+
+
+        <!-- Entry Test Content -->
+
+        <div
+            class="content"
+            id="entryTest"
+        >
+
+            <h2>Entry Test Status</h2>
+
+            <p>
+                Check your entry test status by entering your
+                registration number.
+            </p>
+
+            <button class="submit-btn">
+                Check Status
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+
+        <!-- Result Content -->
+
+        <div
+            class="content"
+            id="result"
+        >
+
+            <h2>Check Result</h2>
+
+            <p>
+                Your examination result will be available here
+                after the result has been published.
+            </p>
+
+            <button class="submit-btn">
+                Check Result
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+    </section>
+    <script src="app.js"></script>
+
+</body>
+</html>
