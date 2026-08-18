@@ -1,313 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Enrollment-Saylani Mass IT Traing Form</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SMIT - Registration Form</title>
 
     <!-- Font Awesome Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-    <header class="navbar">
+  <!-- Header -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo" aria-label="SMIT Home">
+        <span class="logo-s">S</span><span class="logo-m">M</span><span class="logo-i">I</span><span class="logo-t">T</span>
+        <span class="logo-dot d1"></span>
+        <span class="logo-dot d2"></span>
+        <span class="logo-dot d3"></span>
+      </a>
 
-        <!-- New Logo -->
-        <a href="#" class="logo">
-            <img src="./unnamed - Copy.jpg" class="logo-img" alt="EduNova Logo">
-        </a>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#" class="courses-link">Courses <span>⌄</span></a>
+        <a href="#">Campuses</a>
+        <a href="#">Check Result</a>
+        <a href="#" class="enroll-btn">Enroll Now <b>↗</b></a>
+      </nav>
 
+      <button class="menu-btn" id="menuBtn">☰</button>
+    </div>
+  </header>
 
-        <!-- Desktop / Mobile Navigation -->
-        <nav class="nav-links" id="navLinks">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="breadcrumb">
+        <span>⌂</span><b>›</b><strong>Enroll Now</strong>
+      </div>
+      <h1>Registration Form</h1>
+      <p>Start your journey towards excellence. Fill out the form to apply for our courses</p>
+    </div>
+  </section>
 
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Courses</a>
-            <a href="#">Campuses</a>
-            <a href="#">Check Result</a>
+  <!-- Tabs -->
+  <section class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab active" data-tab="registration">
+        <span class="tab-icon">▣</span> Registration Form
+      </button>
+      <button class="tab" data-tab="idcard">
+        <span class="tab-icon">▣</span> Download ID Card
+      </button>
+      <button class="tab" data-tab="entry">
+        <span class="tab-icon">✓</span> Entry Test Status
+      </button>
+      <button class="tab" data-tab="result">
+        <span class="tab-icon">▤</span> Result
+      </button>
+    </div>
+  </section>
 
-            <a href="#registration" class="enroll-btn">
-                Enroll Now
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+  <!-- Main form -->
+  <main class="content">
+    <section class="form-section" id="registration">
+      <div class="section-title">
+        <span class="pin">⌖</span>
+        <h2>Location &amp; Course Details</h2>
+      </div>
 
-        </nav>
-
-
-        <!-- Mobile Menu -->
-        <button class="menu-btn" id="menuBtn">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-
-    </header>
-
-
-
-    <!-- =====================================
-         SECTION 2 : HERO + REGISTRATION
-    ====================================== -->
-
-    <section class="hero" id="registration">
-
-        <div class="breadcrumb">
-
-            <i class="fa-solid fa-graduation-cap"></i>
-
-            <span class="arrow">
-                <i class="fa-solid fa-chevron-right"></i>
-            </span>
-
-            <span>Enroll Now</span>
-
+      <form id="registrationForm">
+        <div class="field">
+          <label for="country">Select Country<span>*</span></label>
+          <div class="select-wrap">
+            <select id="country" required>
+              <option value="">Select country</option>
+              <option>Pakistan</option>
+              <option>United Arab Emirates</option>
+              <option>Saudi Arabia</option>
+              <option>United Kingdom</option>
+            </select>
+          </div>
         </div>
 
+        <div class="field">
+          <label for="city">Select City<span>*</span></label>
+          <div class="select-wrap">
+            <select id="city" required>
+              <option value="">Select city</option>
+              <option>Karachi</option>
+              <option>Lahore</option>
+              <option>Islamabad</option>
+              <option>Hyderabad</option>
+              <option>Faisalabad</option>
+            </select>
+          </div>
+        </div>
 
-        <h1>Registration Form</h1>
+        <div class="field">
+          <label for="course">Select Course<span>*</span></label>
+          <div class="select-wrap">
+            <select id="course" required>
+              <option value="">Select course</option>
+              <option>Web &amp; Mobile App Development</option>
+              <option>Graphic Designing</option>
+              <option>Artificial Intelligence</option>
+              <option>Python Programming</option>
+            </select>
+          </div>
+        </div>
 
-        <p>
-            Start your journey towards excellence.
-            Fill out the form to apply for our courses.
-        </p>
+        <div class="form-row">
+          <div class="Gender">Select Gender<span>*</span></div>
+           <div></div>
+             <select id="gender" required>
+               <option value="">Select gender</option>
+               <option>Male</option>
+               <option>Female</option>
+               <option>Other</option>
+             </select>
+           </div>
+          </div>
+        
+        </div>
 
+        <button class="submit-btn" type="submit">Submit Registration <span>→</span></button>
+      </form>
     </section>
 
+    <!-- Personal Information: same page, no extra tabs/options -->
+    <section class="personal-section">
+      <div class="section-title personal-title">
+        <span class="person-icon">♙</span>
+        <h2>Personal Information</h2>
+      </div>
 
+      <form id="personalForm">
+        <div class="form-row">
+          <div class="field">
+            <label for="fullName">Full Name<span>*</span></label>
+            <div class="icon-input">
+              <span>♙</span>
+              <input id="fullName" type="text" placeholder="Enter your full name" required>
+            </div>
+          </div>
 
-    <!-- =====================================
-         REGISTRATION TABS
-    ====================================== -->
+          <div class="field">
+            <label for="fatherName">Father Name<span>*</span></label>
+            <div class="icon-input">
+              <span>♙</span>
+              <input id="fatherName" type="text" placeholder="Enter father's name" required>
+            </div>
+          </div>
 
-    <section class="tabs-wrapper">
+          <div class="field">
+            <label for="dob">Date of Birth<span>*</span></label>
+            <div class="icon-input">
+              <span>▣</span>
+              <input id="dob" type="date" required>
+            </div>
+          </div>
 
-        <div class="tabs">
+          <div class="field">
+            <label for="email">Email<span>*</span></label>
+            <div class="icon-input">
+              <span>✉</span>
+              <input id="email" type="email" placeholder="your.email@example.com" required>
+            </div>
+          </div>
 
-            <button
-                class="tab active"
-                data-target="registrationForm"
-            >
-                <i class="fa-regular fa-clipboard"></i>
-                Registration Form
-            </button>
+          <div class="field">
+            <label for="phone">Phone<span>*</span></label>
+            <div class="icon-input">
+              <span>♧</span>
+              <input id="phone" type="tel" placeholder="Enter phone number" required>
+            </div>
+          </div>
 
+          <div class="field">
+            <label for="fatherPhone">Father's Phone<span>*</span></label>
+            <div class="icon-input">
+              <span>♧</span>
+              <input id="fatherPhone" type="tel" placeholder="Enter phone number" required>
+            </div>
+          </div>
 
-            <button
-                class="tab"
-                data-target="idCard"
-            >
-                <i class="fa-regular fa-id-card"></i>
-                Download ID Card
-            </button>
+          <div class="field">
+            <label for="idNumber">ID Number<span>*</span></label>
+            <div class="icon-input">
+              <span>▣</span>
+              <input id="idNumber" type="text" placeholder="Enter ID number" required>
+            </div>
+          </div>
 
+          <div class="field">
+            <label for="fatherId">Father's ID Number<span>*</span></label>
+            <div class="icon-input">
+              <span>▣</span>
+              <input id="fatherId" type="text" placeholder="Enter ID number" required>
+            </div>
+          </div>
+        </div>
 
-            <button
-                class="tab"
-                data-target="entryTest"
-            >
-                <i class="fa-regular fa-square-check"></i>
-                Entry Test Status
-            </button>
+        <div class="field address-field">
+          <label for="address">
+            Address<span>*</span>
+            <small>(<b id="addressCounter">0</b>/220 characters)</small>
+          </label>
+          <textarea id="address" maxlength="220" minlength="10"
+            placeholder="Enter your complete address (minimum 10 characters)" required></textarea>
+        </div>
 
+        <button class="submit-btn" type="submit">Continue <span>→</span></button>
+      </form>
+    </section>
+  </main>
 
-            <button
-                class="tab"
-                data-target="result"
-            >
-                <i class="fa-regular fa-file-lines"></i>
-                Result
-            </button>
+ <main class="page">
+
+    <!-- Education & Technical Details -->
+    <section class="details-section">
+      <div class="section-title">ssssS
+        <span class="section-icon">♧</span>
+        <h1>Education &amp; Technical Details</h1>
+      </div>
+
+      <form id="educationForm">
+
+        <div class="top-grid">
+
+          <div class="field">
+            <label for="proficiency">
+              Computer Proficiency<span>*</span>
+            </label>
+
+            <div class="select-box">
+              <select id="proficiency" required>
+                <option value="">Select your computer proficiency</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced</option>
+                <option>Expert</option>
+              </select>
+              <span>⌄</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="qualification">
+              Last Qualification<span>*</span>
+            </label>
+
+            <div class="select-box">
+              <select id="qualification" required>
+                <option value="">Last qualification</option>
+                <option>Matric</option>
+                <option>Intermediate</option>
+                <option>Bachelor</option>
+                <option>Master</option>
+                <option>Other</option>
+              </select>
+              <span>⌄</span>
+            </div>
+          </div>
 
         </div>
 
+        <div class="field full-field">
+          <label for="heard">
+            Where did you hear about us?<span>*</span>
+          </label>
 
+          <div class="select-box">
+            <select id="heard" required>
+              <option value="">Where did you hear about us?</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>YouTube</option>
+              <option>Google</option>
+              <option>Friend / Family</option>
+              <option>SMIT Website</option>
+              <option>Other</option>
+            </select>
+            <span>⌄</span>
+          </div>
+        </div>
 
-        <!-- Registration Form Content -->
+        <!-- Laptop -->
+        <div class="laptop-field">
+          <label>Do you have a Laptop?<span>*</span></label>
 
-        <div
-            class="content active"
-            id="registrationForm"
-        >
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="laptop" value="Yes" required>
+              <span>Yes</span>
+            </label>
 
-            <h2>Apply for Admission</h2>
+            <label class="radio-option">
+              <input type="radio" name="laptop" value="No">
+              <span>No</span>
+            </label>
+          </div>
+        </div>
 
-            <p>
-                Please enter your information below to complete
-                your registration.
-            </p>
+        <!-- Upload Picture -->
+        <div class="upload-section">
+          <div class="upload-title">
+            <span>⇧</span>
+            <strong>Upload Picture</strong>
+          </div>
 
+          <div class="upload-box">
+            <div class="upload-icon">⇧</div>
 
-            <form id="registrationFormSubmit">
+            <label for="picture" class="upload-btn">
+              ↑ Upload Picture
+            </label>
 
-                <div class="form-grid">
+            <input type="file" id="picture" accept="image/*" hidden>
 
-                    <div class="form-group">
-                        <label>Full Name</label>
+            <p>- With white or blue background</p>
+            <p>- File size must be less than 1MB</p>
+            <p>- File type: jpg, jpeg, png</p>
+            <p>- Upload your recent passport size picture</p>
+            <p>- Your face should be clearly visible without any glasses</p>
 
-                        <input
-                            type="text"
-                            placeholder="Enter your full name"
-                            required
-                        >
-                    </div>
+            <div id="fileName"></div>
+          </div>
+        </div>
 
+        <!-- Terms -->
+        <div class="terms-section">
+          <div class="terms-title">
+            <span>▢</span>
+            <strong>Terms and Conditions</strong>
+          </div>
 
-                    <div class="form-group">
-                        <label>Email Address</label>
+          <div class="terms-box">
 
-                        <input
-                            type="email"
-                            placeholder="Enter your email"
-                            required
-                        >
-                    </div>
+            <label class="check-row">
+              <input type="checkbox" name="term1">
+              <span>
+                I hereby solemnly declare that all information provided in this application is true and accurate to the best of my knowledge.
+                Furthermore, I agree to abide by all current and future rules, regulations, and policies established by SMIT.
+              </span>
+            </label>
 
+            <label class="check-row">
+              <input type="checkbox" name="term2">
+              <span>
+                I accept the responsibility to maintain good conduct throughout the program and commit to focusing solely on learning.
+                I will not engage in any political, unethical, or unrelated activities during my enrollment.
+              </span>
+            </label>
 
-                    <div class="form-group">
-                        <label>Phone Number</label>
+            <label class="check-row">
+              <input type="checkbox" name="term3">
+              <span>
+                Upon completion of the course, I agree to successfully complete any project assigned by SMIT as part of the program requirements.
+              </span>
+            </label>
 
-                        <input
-                            type="tel"
-                            placeholder="Enter your phone number"
-                            required
-                        >
-                    </div>
+            <label class="check-row">
+              <input type="checkbox" name="term4">
+              <span>
+                Female students are required to wear an abaya or hijab while attending classes.
+              </span>
+            </label>
 
+            <div class="terms-footer">
+              By submitting this form, you agree to our
+              <a href="#">Privacy Policy</a> and
+              <a href="#">Terms of Service</a>.
+            </div>
+          </div>
+        </div>
 
-                    <div class="form-group">
-                        <label>Select Course</label>
+        <!-- Notice -->
+        <div class="notice">
+          <div class="notice-icon">ⓘ</div>
+          <div>
+            <strong>Important Notice:</strong>
+            <p>Please ensure all information provided is accurate. Incomplete or false information may result in rejection of your application.</p>
+          </div>
+        </div>
 
-                        <select required>
+        <button type="submit" class="submit-btn">Submit <span>→</span></button>
 
-                            <option value="">
-                                Choose a course
-                            </option>
+      </form>
+    </section>
+  </main>
 
-                            <option>
-                                Web Development
-                            </option>
+  <!-- Google Play style popup -->
+  <div class="app-popup" id="appPopup">
+    <button class="popup-close" id="popupClose">×</button>
+    <div class="app-top">
+      <div class="app-icon">SMIT</div>
+      <div>
+        <h3>Get the SMIT App</h3>
+        <p>Manage your entire learning experience<br>in one app.</p>
+      </div>
+    </div>
+    <button class="play-btn" id="playBtn">
+      <span class="play-triangle">▶</span>
+      <span><small>GET IT ON</small><strong>Google Play</strong></span>
+    </button>
+  </div>
 
-                            <option>
-                                Graphic Design
-                            </option>
+  <!-- Chat box -->
+  <div class="chat-message" id="chatMessage">
+    <button class="chat-close" id="chatClose">×</button>
+    <strong>Welcome to Saylani Mass IT Training!</strong>
+    <span>How can I help you today?</span>
+  </div>
 
-                            <option>
-                                Digital Marketing
-                            </option>
+  <button class="chat-btn" id="chatBtn" aria-label="Open chat">
+    <span>◯</span>
+  </button>
 
-                            <option>
-                                Artificial Intelligence
-                            </option>
+  <div class="chat-panel" id="chatPanel">
+    <div class="chat-head">
+      <strong>SMIT Assistant</strong>
+      <button id="panelClose">×</button>
+    </div>
+    <div class="chat-body">Hello! How can I help you?</div>
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message...">
+      <button>→</button>
+    </div>
+  </div>
 
-                        </select>
+  <div class="translate-btn">文</div>
 
-                    </div>
+  <!-- ================= FOOTER ================= -->
 
+    <footer>
 
-                    <div class="form-group full">
-                        <label>CNIC / ID Number</label>
+        <div class="footer-container">
 
-                        <input
-                            type="text"
-                            placeholder="Enter your ID number"
-                            required
-                        >
-                    </div>
+            <!-- Logo + Contact -->
+            <div class="footer-about">
 
+                <div class="logos">
+                    <img src="./saylani logo.png" alt="SMIT Logo">
+                    <img src="./saylani logo.png" alt="Saylani Logo">
                 </div>
 
+                <p class="description">
+                    Empowering Pakistan's youth with<br>
+                    world-class IT education and training<br>
+                    programs to build a brighter digital<br>
+                    future.
+                </p>
 
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Submit Registration
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
+                <div class="contact">
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        A-25, Bahadurabad Chowrangi, Karachi,<br>
+                        <span>Pakistan</span>
+                    </p>
 
-            </form>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        +92 21 111 729 526
+                    </p>
+
+                    <p>
+                        <i class="fa-regular fa-envelope"></i>
+                        saylanimass@gmail.com
+                    </p>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <!-- Google Play -->
+                <div class="google-play">
+                    <div class="play-icon">
+                        <i class="fa-brands fa-google-play"></i>
+                    </div>
+
+                    <div>
+                        <small>GET IT ON</small>
+                        <strong>Google Play</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <div class="line"></div>
+
+                <a href="#">Home</a>
+                <a href="#">Chat Us</a>
+                <a href="#">Enroll Now</a>
+                <a href="#">Download ID Card</a>
+                <a href="#">Entry Test Status</a>
+                <a href="#">Check Results</a>
+
+            </div>
+
+
+            <!-- Courses -->
+            <div class="footer-column">
+
+                <h3>Our Courses</h3>
+
+                <div class="line"></div>
+
+                <a href="#">Web Development</a>
+                <a href="#">Agentic AI</a>
+                <a href="#">AI &amp; Data Science</a>
+                <a href="#">Graphic Design</a>
+                <a href="#">3D Animation</a>
+
+            </div>
+
+
+            <!-- Resources -->
+            <div class="footer-column">
+
+                <h3>Resources</h3>
+
+                <div class="line"></div>
+
+                <a href="#">Courses</a>
+                <a href="#">Campuses</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+
+            </div>
 
         </div>
 
 
-
-        <!-- ID Card Content -->
-
-        <div
-            class="content"
-            id="idCard"
-        >
-
-            <h2>Download ID Card</h2>
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
 
             <p>
-                Enter your registration information to download
-                your student ID card.
+                © 2013 - 2026
+                <b>Saylani Mass IT Training.</b>
+                All rights reserved.
             </p>
 
-            <button class="submit-btn" id="downloadBtn">
-                <i class="fa-solid fa-download"></i>
-                Download ID Card
-            </button>
+            <div class="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
 
         </div>
 
+    </footer>
 
 
-        <!-- Entry Test Content -->
+    <!-- Chat Button -->
+    <div class="chat-button">
+        <i class="fa-regular fa-comment"></i>
+    </div>
 
-        <div
-            class="content"
-            id="entryTest"
-        >
-
-            <h2>Entry Test Status</h2>
-
-            <p>
-                Check your entry test status by entering your
-                registration number.
-            </p>
-
-            <button class="submit-btn">
-                Check Status
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-
-        </div>
-
-
-
-        <!-- Result Content -->
-
-        <div
-            class="content"
-            id="result"
-        >
-
-            <h2>Check Result</h2>
-
-            <p>
-                Your examination result will be available here
-                after the result has been published.
-            </p>
-
-            <button class="submit-btn">
-                Check Result
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
-
-        </div>
-
-    </section>
-    <script src="app.js"></script>
-
+  <script src="app.js"></script>
 </body>
 </html>
+
+          
+
+           
