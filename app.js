@@ -1,146 +1,174 @@
-/* ==========================
-           MOBILE MENU
-        =========================== */
+const tabs = document.querySelectorAll(".tab");
 
-        const menuBtn = document.getElementById("menuBtn");
-        const navLinks = document.getElementById("navLinks");
+tabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    tabs.forEach(item => item.classList.remove("active"));
+    tab.classList.add("active");
 
-        menuBtn.addEventListener("click", function () {
+    const tabName = tab.dataset.tab;
 
-            navLinks.classList.toggle("show");
+    if (tabName !== "registration") {
+      alert(tab.textContent.trim() + " section selected.");
+    }
+  });
+});
 
-            const icon = menuBtn.querySelector("i");
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.querySelector(".nav-links");
 
-            if (navLinks.classList.contains("show")) {
+menuBtn.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
 
-                icon.classList.remove("fa-bars");
-                icon.classList.add("fa-xmark");
+// App popup
+const appPopup = document.getElementById("appPopup");
+const popupClose = document.getElementById("popupClose");
+const playBtn = document.getElementById("playBtn");
 
-            } else {
+popupClose.addEventListener("click", () => {
+  appPopup.style.display = "none";
+});
 
-                icon.classList.remove("fa-xmark");
-                icon.classList.add("fa-bars");
+playBtn.addEventListener("click", () => {
+  alert("Google Play button clicked.");
+});
 
-            }
+// Chat
+const chatBtn = document.getElementById("chatBtn");
+const chatPanel = document.getElementById("chatPanel");
+const panelClose = document.getElementById("panelClose");
+const chatClose = document.getElementById("chatClose");
+const chatMessage = document.getElementById("chatMessage");
 
-        });
+chatBtn.addEventListener("click", () => {
+  chatPanel.classList.toggle("open");
+  chatMessage.style.display = "none";
+});
 
+panelClose.addEventListener("click", () => {
+  chatPanel.classList.remove("open");
+});
 
-        /* ==========================
-           TAB SWITCHING
-        =========================== */
+chatClose.addEventListener("click", () => {
+  chatMessage.style.display = "none";
+});
 
-        const tabs = document.querySelectorAll(".tab");
-        const contents = document.querySelectorAll(".content");
+// Form validation
+const form = document.getElementById("registrationForm");
 
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
 
-        tabs.forEach(function(tab) {
+  const country = document.getElementById("country").value;
+  const city = document.getElementById("city").value;
+  const course = document.getElementById("course").value;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
 
-            tab.addEventListener("click", function() {
+  if (!country || !city || !course || !name || !email) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
-                // Remove active from all tabs
-                tabs.forEach(function(item) {
-                    item.classList.remove("active");
-                });
+  alert("Registration submitted successfully!");
+  form.reset();
+});
 
+// Simple city update based on country
+const country = document.getElementById("country");
+const city = document.getElementById("city");
 
-                // Add active to clicked tab
-                tab.classList.add("active");
+country.addEventListener("change", () => {
+  city.innerHTML = '<option value="">Select city</option>';
 
+  const cities = {
+    "Pakistan": ["Karachi", "Lahore", "Islamabad", "Hyderabad", "Faisalabad"],
+    "United Arab Emirates": ["Dubai", "Abu Dhabi", "Sharjah"],
+    "Saudi Arabia": ["Riyadh", "Jeddah", "Dammam"],
+    "United Kingdom": ["London", "Birmingham", "Manchester"]
+  };
 
-                // Hide all content
-                contents.forEach(function(content) {
-                    content.classList.remove("active");
-                });
-
-
-                // Get target
-                const targetId = tab.getAttribute("data-target");
-
-                const targetContent =
-                    document.getElementById(targetId);
-
-
-                // Show selected content
-                targetContent.classList.add("active");
-
-            });
-
-        });
-
-
-        /* ==========================
-           FORM SUBMISSION
-        =========================== */
-
-        const registrationForm =
-            document.getElementById(
-                "registrationFormSubmit"
-            );
-
-
-        registrationForm.addEventListener(
-            "submit",
-            function(event) {
-
-                event.preventDefault();
-
-                alert(
-                    "Registration submitted successfully! 🎉"
-                );
-
-                registrationForm.reset();
-
-            }
-        );
-
-
-        /* ==========================
-           DOWNLOAD BUTTON
-        =========================== */
-
-        const downloadBtn =
-            document.getElementById("downloadBtn");
+  if (cities[country.value]) {
+    cities[country.value].forEach(item => {
+      const option = document.createElement("option");
+      option.value = item;
+      option.textContent = item;
+      city.appendChild(option);
+    });
+  }
+});
 
 
-        downloadBtn.addEventListener(
-            "click",
-            function() {
+// Personal Information form
+const personalForm = document.getElementById("personalForm");
+const addressBox = document.getElementById("address");
+const addressCounter = document.getElementById("addressCounter");
 
-                alert(
-                    "Your ID Card download will start here."
-                );
+if (addressBox && addressCounter) {
+  addressBox.addEventListener("input", () => {
+    addressCounter.textContent = addressBox.value.length;
+  });
+}
 
-            }
-        );
+if (personalForm) {
+  personalForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    if (addressBox.value.trim().length < 10) {
+      alert("Address must contain at least 10 characters.");
+      addressBox.focus();
+      return;
+    }
 
-        /* ==========================
-           CLOSE MOBILE MENU
-           AFTER CLICK
-        =========================== */
+    alert("Personal information saved successfully!");
+  });
+}
 
-        const mobileLinks =
-            document.querySelectorAll(
-                ".nav-links a"
-            );
+// Picture upload
+const picture = document.getElementById("picture");
+const fileName = document.getElementById("fileName");
 
+picture.addEventListener("change", () => {
+  if (!picture.files.length) {
+    fileName.textContent = "";
+    return;
+  }
 
-        mobileLinks.forEach(function(link) {
+  const file = picture.files[0];
+  const maxSize = 1024 * 1024;
 
-            link.addEventListener(
-                "click",
-                function() {
+  if (file.size > maxSize) {
+    alert("Please select an image smaller than 1MB.");
+    picture.value = "";
+    fileName.textContent = "";
+    return;
+  }
 
-                    navLinks.classList.remove("show");
+  fileName.textContent = "Selected: " + file.name;
+});
 
-                    const icon =
-                        menuBtn.querySelector("i");
+// Form validation
+const educationForm = document.getElementById("educationForm");
 
-                    icon.classList.remove("fa-xmark");
-                    icon.classList.add("fa-bars");
+educationForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-                }
-            );
+  const terms = document.querySelectorAll(
+    '.check-row input[type="checkbox"]'
+  );
 
-        });
+  const allChecked = [...terms].every(box => box.checked);
+
+  if (!allChecked) {
+    alert("Please accept all Terms and Conditions.");
+    return;
+  }
+
+  if (!picture.files.length) {
+    alert("Please upload your picture.");
+    return;
+  }
+
+  alert("Education & Technical Details submitted successfully!");
+});
